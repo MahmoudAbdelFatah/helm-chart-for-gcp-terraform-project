@@ -1,3 +1,6 @@
+# Helm
+
+## This is repo for the helm chart of the gcp terraform app on this [repo](https://github.com/MahmoudAbdelFatah/GCP-with-terraform) 
 
 > Create a Helm chart with `helmGCPChart` name. then, inside the directory of the Helm chart, run this command so 
 install the chart.
