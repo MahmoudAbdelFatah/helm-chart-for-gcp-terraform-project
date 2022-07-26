@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment_frontend.name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.deployment_frontend.label }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deployment_frontend.label }}
+    spec:
+      containers:
+      - name: {{ .Values.image.label }}
+        image: {{ .Values.image.repository }}
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.deployment_backend.name }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.deployment_backend.label }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.deployment_backend.label }}
+    spec:
+      containers:
+      - name: {{ .Values.image.label }}
+        image: {{ .Values.image.repository }}
+        ports:
+        - containerPort: 6379

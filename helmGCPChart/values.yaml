@@ -1,0 +1,31 @@
+# Default values for helm-gcp-terraform.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+deployment_frontend:
+  name: frontend-deploy
+  label: frontend
+
+deployment_backend:
+  name: backend-deploy
+  label: backend
+
+service_frontend:
+  name: lb-service
+  label: frontend
+
+service_backend:
+  name: redis-service
+  label: backend
+
+replicaCount: 3
+
+image:
+  repository: gcr.io/gcp-terraform-357100/python-app:latest
+  label: app-container
+
+service_lb:
+  type: LoadBalancer
+  port: 8000
+  targetPort: 8000
+  nodePort: 30030
