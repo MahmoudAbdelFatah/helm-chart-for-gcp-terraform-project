@@ -1,7 +1,3 @@
-# Helm
-
-## This is repo for the helm chart of the gcp terraform app on this [repo](https://github.com/MahmoudAbdelFatah/GCP-with-terraform) 
-
 
 > Create a Helm chart with `helmGCPChart` name. then, inside the directory of the Helm chart, run this command so 
 install the chart.
@@ -32,4 +28,13 @@ $ kubectl edit svc myjenkins
  - set type of the service to be `NodePort`, then set the `nodePort:30553` from `port` section.
  - get the minikube ip by using this command `minikube ip`.
  - now i can expose the jenkins chart which is deployed on clustet minikube by this url `minikube-ip:30553`
+ 
 ![This is a alt text.](/images/image1.png)
+
+
+- Get your 'admin' user password by running:
+
+```
+echo $(kubectl get secret --namespace default myjenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode)
+```
+![This is a alt text.](/images/image2.png)
