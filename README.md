@@ -35,7 +35,7 @@ $ kubectl edit svc myjenkins
 ![This is a alt text.](/images/image1.png)
 
 
-- Get your 'admin' user password by running:
+- Get your `admin` user password by running:
 
 ```
 echo $(kubectl get secret --namespace default myjenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode)
