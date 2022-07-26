@@ -35,4 +35,4 @@ $ kubectl edit svc myjenkins
  
 ## Images
 
-![This is a alt text.](/image/image1.png)
+![This is a alt text.](/images/image1.png)
