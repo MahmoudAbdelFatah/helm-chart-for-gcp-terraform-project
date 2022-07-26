@@ -32,7 +32,4 @@ $ kubectl edit svc myjenkins
  - set type of the service to be `NodePort`, then set the `nodePort:30553` from `port` section.
  - get the minikube ip by using this command `minikube ip`.
  - now i can expose the jenkins chart which is deployed on clustet minikube by this url `minikube-ip:30553`
- 
-## Images
-
 ![This is a alt text.](/images/image1.png)
